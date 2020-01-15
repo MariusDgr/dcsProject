@@ -379,6 +379,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t1 = new PetriTransition(pn);
 		t1.TransitionName = "T_u1";
 		t1.InputPlaceName.add("P_a1");
+		t1.InputPlaceName.add("car1");
 
 		Condition T1Ct1 = new Condition(t1, "P_a1", TransitionCondition.NotNull);
 		Condition T1Ct2 = new Condition(t1, "P_x1", TransitionCondition.CanAddCars);
@@ -386,6 +387,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT1 = new GuardMapping();
 		grdT1.condition = T1Ct1;
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.AddElement, "SENSOR1C"));
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.AddElement, "car1"));
 		grdT1.Activations.add(new Activation(t1, "P_a1", TransitionOperation.AddElement, "P_x1"));
 		t1.GuardMappingList.add(grdT1);
 
@@ -416,6 +419,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t3 = new PetriTransition(pn);
 		t3.TransitionName = "T_u2";
 		t3.InputPlaceName.add("P_a2");
+		t3.InputPlaceName.add("car2");
 
 		Condition T3Ct1 = new Condition(t3, "P_a2", TransitionCondition.NotNull);
 		Condition T3Ct2 = new Condition(t1, "P_x2", TransitionCondition.CanAddCars);
@@ -423,6 +427,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT3 = new GuardMapping();
 		grdT3.condition = T3Ct1;
+		grdT3.Activations.add(new Activation(t1, "car2", TransitionOperation.AddElement, "SENSOR2C"));
+		grdT3.Activations.add(new Activation(t1, "car2", TransitionOperation.AddElement, "car2"));
 		grdT3.Activations.add(new Activation(t3, "P_a2", TransitionOperation.AddElement, "P_x2"));
 		t3.GuardMappingList.add(grdT3);
 
@@ -452,6 +458,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t5 = new PetriTransition(pn);
 		t5.TransitionName = "T_u3";
 		t5.InputPlaceName.add("P_a3");
+		t5.InputPlaceName.add("car3");
 
 		Condition T5Ct1 = new Condition(t5, "P_a3", TransitionCondition.NotNull);
 		Condition T5Ct2 = new Condition(t5, "P_x3", TransitionCondition.CanAddCars);
@@ -459,6 +466,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT5 = new GuardMapping();
 		grdT5.condition = T5Ct1;
+		grdT5.Activations.add(new Activation(t1, "car3", TransitionOperation.AddElement, "SENSOR3C"));
+		grdT5.Activations.add(new Activation(t1, "car3", TransitionOperation.AddElement, "car3"));
 		grdT5.Activations.add(new Activation(t5, "P_a3", TransitionOperation.AddElement, "P_x3"));
 		t5.GuardMappingList.add(grdT5);
 
@@ -801,6 +810,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t25 = new PetriTransition(pn);
 		t25.TransitionName = "T_u6";
 		t25.InputPlaceName.add("P_a6");
+		t25.InputPlaceName.add("car6");
 
 		Condition T25Ct1 = new Condition(t25, "P_a6", TransitionCondition.NotNull);
 		Condition T25Ct2 = new Condition(t25, "P_x6", TransitionCondition.CanAddCars);
@@ -808,6 +818,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT25 = new GuardMapping();
 		grdT25.condition = T25Ct1;
+		grdT25.Activations.add(new Activation(t1, "car6", TransitionOperation.AddElement, "SENSOR6C"));
+		grdT25.Activations.add(new Activation(t1, "car6", TransitionOperation.AddElement, "car6"));
 		grdT25.Activations.add(new Activation(t25, "P_a6", TransitionOperation.AddElement, "P_x6"));
 		t25.GuardMappingList.add(grdT25);
 
@@ -838,6 +850,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t27 = new PetriTransition(pn);
 		t27.TransitionName = "T_u7";
 		t27.InputPlaceName.add("P_a7");
+		t27.InputPlaceName.add("car7");
 
 		Condition T27Ct1 = new Condition(t27, "P_a7", TransitionCondition.NotNull);
 		Condition T27Ct2 = new Condition(t27, "P_x7", TransitionCondition.CanAddCars);
@@ -845,6 +858,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT27 = new GuardMapping();
 		grdT27.condition = T27Ct1;
+		grdT27.Activations.add(new Activation(t1, "car7", TransitionOperation.AddElement, "SENSOR7C"));
+		grdT27.Activations.add(new Activation(t1, "car7", TransitionOperation.AddElement, "car7"));
 		grdT27.Activations.add(new Activation(t27, "P_a7", TransitionOperation.AddElement, "P_x7"));
 		t27.GuardMappingList.add(grdT27);
 
