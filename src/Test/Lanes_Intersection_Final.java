@@ -626,13 +626,13 @@ public class Lanes_Intersection_Final {
 
 		PetriTransition t20 = new PetriTransition(pn);
 		t20.TransitionName = "T_g4";
-		t20.InputPlaceName.add("P_IR");
+		t20.InputPlaceName.add("P_IL");
 
-		Condition T20Ct1 = new Condition(t20, "P_IR", TransitionCondition.HaveCarForMe);
+		Condition T20Ct1 = new Condition(t20, "P_IL", TransitionCondition.HaveCarForMe);
 
 		GuardMapping grdT20 = new GuardMapping();
 		grdT20.condition = T20Ct1;
-		grdT20.Activations.add(new Activation(t20, "P_IR", TransitionOperation.PopElementWithTargetToQueue, "P_x5"));
+		grdT20.Activations.add(new Activation(t20, "P_IL", TransitionOperation.PopElementWithTargetToQueue, "P_x4"));
 		t20.GuardMappingList.add(grdT20);
 
 		t20.Delay = 0;
@@ -821,7 +821,7 @@ public class Lanes_Intersection_Final {
 		
 		// T31 ------------------------------------------------
 		PetriTransition t31 = new PetriTransition(pn);
-		t31.TransitionName = "T_iL";
+		t31.TransitionName = "T_i6";
 		t31.InputPlaceName.add("P_b6");
 
 		Condition T31Ct1 = new Condition(t31, "P_b6", TransitionCondition.NotNull);
@@ -853,7 +853,7 @@ public class Lanes_Intersection_Final {
 		
 		// T33 ------------------------------------------------
 		PetriTransition t33 = new PetriTransition(pn);
-		t33.TransitionName = "T_iL";
+		t33.TransitionName = "T_i7";
 		t33.InputPlaceName.add("P_b7");
 
 		Condition T33Ct1 = new Condition(t33, "P_b7", TransitionCondition.NotNull);
@@ -885,7 +885,7 @@ public class Lanes_Intersection_Final {
 		
 		// T35 ------------------------------------------------
 		PetriTransition t35 = new PetriTransition(pn);
-		t35.TransitionName = "T_iL";
+		t35.TransitionName = "T_i5";
 		t35.InputPlaceName.add("P_b5");
 
 		Condition T35Ct1 = new Condition(t35, "P_b5", TransitionCondition.NotNull);
@@ -902,14 +902,14 @@ public class Lanes_Intersection_Final {
 
 		// T36-----------------------------------------------------------
 		PetriTransition t36 = new PetriTransition(pn);
-		t36.TransitionName = "T_g4";
-		t36.InputPlaceName.add("P_IL");
+		t36.TransitionName = "T_g5";
+		t36.InputPlaceName.add("P_IR");
 
-		Condition T36Ct1 = new Condition(t36, "P_IL", TransitionCondition.HaveCarForMe);
+		Condition T36Ct1 = new Condition(t36, "P_IR", TransitionCondition.HaveCarForMe);
 
 		GuardMapping grdT36 = new GuardMapping();
 		grdT36.condition = T36Ct1;
-		grdT36.Activations.add(new Activation(t36, "P_IL", TransitionOperation.PopElementWithTargetToQueue, "P_x4"));
+		grdT36.Activations.add(new Activation(t36, "P_IR", TransitionOperation.PopElementWithTargetToQueue, "P_x5"));
 		t36.GuardMappingList.add(grdT36);
 
 		t36.Delay = 0;
