@@ -387,12 +387,12 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT1 = new GuardMapping();
 		grdT1.condition = T1Ct1;
-		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.AddElement, "SENSOR1C"));
-		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.AddElement, "car1"));
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.SendOverNetwork, "SENSOR1C"));
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.Move, "car1"));
 		grdT1.Activations.add(new Activation(t1, "P_a1", TransitionOperation.AddElement, "P_x1"));
 		t1.GuardMappingList.add(grdT1);
 
-		t1.Delay = 0;
+		t1.Delay = 1;
 		pn.Transitions.add(t1);
 
 		// T2 ------------------------------------------------
@@ -427,8 +427,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT3 = new GuardMapping();
 		grdT3.condition = T3Ct1;
-		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.AddElement, "SENSOR2C"));
-		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.AddElement, "car2"));
+		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.SendOverNetwork, "SENSOR2C"));
+		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.Move, "car2"));
 		grdT3.Activations.add(new Activation(t3, "P_a2", TransitionOperation.AddElement, "P_x2"));
 		t3.GuardMappingList.add(grdT3);
 
@@ -466,8 +466,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT5 = new GuardMapping();
 		grdT5.condition = T5Ct1;
-		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.AddElement, "SENSOR3C"));
-		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.AddElement, "car3"));
+		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.SendOverNetwork, "SENSOR3C"));
+		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.Move, "car3"));
 		grdT5.Activations.add(new Activation(t5, "P_a3", TransitionOperation.AddElement, "P_x3"));
 		t5.GuardMappingList.add(grdT5);
 
@@ -818,8 +818,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT25 = new GuardMapping();
 		grdT25.condition = T25Ct1;
-		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.AddElement, "SENSOR6C"));
-		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.AddElement, "car6"));
+		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.SendOverNetwork, "SENSOR6C"));
+		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.Move, "car6"));
 		grdT25.Activations.add(new Activation(t25, "P_a6", TransitionOperation.AddElement, "P_x6"));
 		t25.GuardMappingList.add(grdT25);
 
@@ -858,8 +858,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT27 = new GuardMapping();
 		grdT27.condition = T27Ct1;
-		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.AddElement, "SENSOR7C"));
-		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.AddElement, "car7"));
+		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.SendOverNetwork, "SENSOR7C"));
+		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.Move, "car7"));
 		grdT27.Activations.add(new Activation(t27, "P_a7", TransitionOperation.AddElement, "P_x7"));
 		t27.GuardMappingList.add(grdT27);
 
