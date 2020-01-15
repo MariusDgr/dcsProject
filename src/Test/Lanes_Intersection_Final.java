@@ -1,5 +1,7 @@
 package Test;
 
+import java.util.ArrayList;
+
 import Components.Activation;
 import Components.Condition;
 import Components.GuardMapping;
@@ -9,6 +11,9 @@ import Components.PetriTransition;
 import DataObjects.DataCar;
 import DataObjects.DataCarQueue;
 import DataObjects.DataString;
+import DataObjects.DataTransfer;
+import DataOnly.Car;
+import DataOnly.TransferOperation;
 import Enumerations.LogicConnector;
 import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
@@ -288,8 +293,87 @@ public class Lanes_Intersection_Final {
 		
 		DataCarQueue p44 = new DataCarQueue();
 		p44.Value.Size = 3;
-		p44.SetName("P_IL");//right intersection node
+		p44.SetName("P_IL");//left intersection node
 		pn.PlaceList.add(p44);
+		
+		// ------------------------ Sensors for intelligent cycles
+
+        DataTransfer ps1 = new DataTransfer();
+		ps1.SetName("SENSOR1");
+		ps1.Value = new TransferOperation("localhost", "1081", "SENSOR1C");
+		pn.PlaceList.add(ps1);
+        
+        DataTransfer ps2 = new DataTransfer();
+		ps2.SetName("SENSOR2");
+		ps2.Value = new TransferOperation("localhost", "1081", "SENSOR2C");
+		pn.PlaceList.add(ps2);
+        
+        DataTransfer ps3 = new DataTransfer();
+		ps3.SetName("SENSOR3");
+		ps3.Value = new TransferOperation("localhost", "1081", "SENSOR3C");
+		pn.PlaceList.add(ps3);
+        
+        DataTransfer ps4 = new DataTransfer();
+		ps4.SetName("SENSOR4");
+		ps4.Value = new TransferOperation("localhost", "1081", "SENSOR4C");
+		pn.PlaceList.add(ps4);
+        
+        DataTransfer ps5 = new DataTransfer();
+		ps5.SetName("SENSOR5");
+		ps5.Value = new TransferOperation("localhost", "1081", "SENSOR5C");
+		pn.PlaceList.add(ps5);
+             
+        DataTransfer ps6 = new DataTransfer();
+		ps6.SetName("SENSOR6");
+		ps6.Value = new TransferOperation("localhost", "1081", "SENSOR6C");
+		pn.PlaceList.add(ps6);
+          
+        DataTransfer ps7 = new DataTransfer();
+		ps7.SetName("SENSOR7");
+		ps7.Value = new TransferOperation("localhost", "1081", "SENSOR7C");
+		pn.PlaceList.add(ps7);
+        
+		// -------------------------------- Sensor place
+
+        DataString car1 = new DataString();
+		car1.SetName("car1");
+		car1.SetValue("car1");
+		pn.PlaceList.add(car1);
+          
+        DataString car2 = new DataString();
+		car2.SetName("car2");
+		car2.SetValue("car2");
+		pn.PlaceList.add(car2);
+        
+        DataString car3 = new DataString();
+		car3.SetName("car3");
+		car3.SetValue("car3");
+		pn.PlaceList.add(car3);
+        
+        DataString car4 = new DataString();
+		car4.SetName("car4");
+		car4.SetValue("car4");
+		pn.PlaceList.add(car4);
+          
+        DataString car5 = new DataString();
+		car5.SetName("car5");
+		car5.SetValue("car5");
+		pn.PlaceList.add(car5);
+         
+        DataString car6 = new DataString();
+		car6.SetName("car6");
+		car6.SetValue("car6");
+		pn.PlaceList.add(car6);
+           
+        DataString car7 = new DataString();
+		car7.SetName("car7");
+		car7.SetValue("car7");
+		pn.PlaceList.add(car7);
+        
+        	
+		// -------------------------------------------------------------------------------------------
+		// --------------------------------Transitions-----------------------------------------------
+		// ------------------------------------------------------------------------------------------- 
 
 		// T1 ------------------------------------------------
 		PetriTransition t1 = new PetriTransition(pn);
@@ -922,6 +1006,12 @@ public class Lanes_Intersection_Final {
 		System.out.println("Exp1 started \n ------------------------------");
 		pn.Delay = 2000;
 		// pn.Start();
+		
+		// How do I pass this to the intersection
+//		ArrayList<String> traseu = new ArrayList<>();
+//		traseu.add("T_g5");
+//		traseu.add("T_g7");
+//		Car car1 = new Car("BWM", "AB80", traseu);
 
 		PetriNetWindow frame = new PetriNetWindow();
 		frame.petriNet = pn;

@@ -17,7 +17,7 @@ public class Controller3F {
 		PetriNet pn = new PetriNet();
 		pn.PetriNetName = "Controller";
 		pn.SetName("Controller");
-		pn.NetworkPort = 1081;
+		pn.NetworkPort = 1082;
 		
 		DataString ini = new DataString();
 		//ini.Printable = false;
@@ -85,17 +85,17 @@ public class Controller3F {
 		
 		DataTransfer p8 = new DataTransfer();
 		p8.SetName("OP5");
-		p8.Value = new TransferOperation("localhost", "1082" , "P_TL5");
+		p8.Value = new TransferOperation("localhost", "1080" , "P_TL5");
 		pn.PlaceList.add(p8);
 		
 		DataTransfer p9 = new DataTransfer();
 		p9.SetName("OP6");
-		p9.Value = new TransferOperation("localhost", "1082" , "P_TL6");
+		p9.Value = new TransferOperation("localhost", "1080" , "P_TL6");
 		pn.PlaceList.add(p9);
 		
 		DataTransfer p10 = new DataTransfer();
 		p10.SetName("OP7");
-		p10.Value = new TransferOperation("localhost", "1082" , "P_TL7");
+		p10.Value = new TransferOperation("localhost", "1080" , "P_TL7");
 		pn.PlaceList.add(p10);
 		
 		
