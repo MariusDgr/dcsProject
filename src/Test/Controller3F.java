@@ -9,6 +9,7 @@ import Components.PetriTransition;
 import DataObjects.DataString;
 import DataObjects.DataTransfer;
 import DataOnly.TransferOperation;
+import Enumerations.LogicConnector;
 import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
 
@@ -99,6 +100,24 @@ public class Controller3F {
 		pn.PlaceList.add(p10);
 		
 		
+		// --------------------- Adding sensors
+		DataString psc5 = new DataString();
+		psc5.SetName("SENSOR5C");
+		pn.PlaceList.add(psc5);
+		
+		DataString psc6 = new DataString();
+		psc6.SetName("SENSOR6C");
+		pn.PlaceList.add(psc6);
+		
+		DataString psc7 = new DataString();
+		psc7.SetName("SENSOR7C");
+		pn.PlaceList.add(psc7);
+				
+//		DataTransfer psc8 = new DataTransfer();
+//		psc8.SetName("SENSOR54C");
+//		psc8.Value = new TransferOperation("localhost", "1082", "SENSOR4C");
+//		pn.PlaceList.add(psc8);
+		
 		//----------------------------iniT------------------------------------
 		PetriTransition iniT = new PetriTransition(pn);
 		iniT.TransitionName = "iniT";
@@ -114,7 +133,7 @@ public class Controller3F {
 		grdiniT.Activations.add(new Activation(iniT, "ini", TransitionOperation.SendOverNetwork, "OP7"));		
 		iniT.GuardMappingList.add(grdiniT);
 	
-		iniT.Delay = 5;
+		iniT.Delay = 3;
 		pn.Transitions.add(iniT);
 		
 		
@@ -136,8 +155,7 @@ public class Controller3F {
     
         t1.Delay = 5;
         pn.Transitions.add(t1);
-        
-            
+                
         // Transition T2  
         PetriTransition t2 = new PetriTransition(pn);
         t2.TransitionName = "T2";
@@ -183,8 +201,11 @@ public class Controller3F {
         t4.TransitionName = "T4";
         t4.InputPlaceName.add("allred_1");
         t4.InputPlaceName.add("green");
+        t4.InputPlaceName.add("SENSOR6C");
         
         Condition T4CttransIndex = new Condition(t4, "allred_1", TransitionCondition.NotNull);
+        Condition T4CttransIndex2 = new Condition(t1, "SENSOR6C", TransitionCondition.NotNull);
+        T4CttransIndex.SetNextCondition(LogicConnector.AND, T4CttransIndex2);
 
         GuardMapping grdT4 = new GuardMapping();
         grdT4.condition= T4CttransIndex;
@@ -197,6 +218,24 @@ public class Controller3F {
         t4.Delay = 5;
         pn.Transitions.add(t4);
         
+        // Transition Tskip lane 6
+	    PetriTransition tskip6 = new PetriTransition(pn);
+	    tskip6.TransitionName = "Tskip6";
+	    tskip6.InputPlaceName.add("allred_1");
+	    tskip6.InputPlaceName.add("SENSOR6C");
+	    
+	    Condition T1CttransIndex_skip = new Condition(tskip6, "allred_1", TransitionCondition.NotNull);
+	    Condition T1CttransIndex2_skip = new Condition(tskip6, "SENSOR6C", TransitionCondition.IsNull);
+	    T1CttransIndex_skip.SetNextCondition(LogicConnector.AND, T1CttransIndex2_skip);
+	
+	    GuardMapping grdT6_skip = new GuardMapping();
+	    grdT6_skip.condition= T1CttransIndex_skip;
+	    grdT6_skip.Activations.add(new Activation(tskip6, "allred_1", TransitionOperation.Move, "allred_2"));
+	            
+	    tskip6.GuardMappingList.add(grdT6_skip);
+	
+	    tskip6.Delay = 1;
+	    pn.Transitions.add(tskip6);
             
         // Transition T5  
         PetriTransition t5 = new PetriTransition(pn);
@@ -243,8 +282,11 @@ public class Controller3F {
         t7.TransitionName = "T7";
         t7.InputPlaceName.add("allred_2");
         t7.InputPlaceName.add("green");
+	    t7.InputPlaceName.add("SENSOR7C");
         
         Condition T7CttransIndex = new Condition(t7, "allred_2", TransitionCondition.NotNull);
+        Condition T7CttransIndex2 = new Condition(t7, "SENSOR7C", TransitionCondition.NotNull);
+        T7CttransIndex.SetNextCondition(LogicConnector.AND, T7CttransIndex2);
 
         GuardMapping grdT7 = new GuardMapping();
         grdT7.condition= T7CttransIndex;
@@ -257,6 +299,24 @@ public class Controller3F {
         t7.Delay = 5;
         pn.Transitions.add(t7);
         
+        // Transition Tskip lane 7 
+	    PetriTransition tskip7 = new PetriTransition(pn);
+	    tskip7.TransitionName = "Tskip7";
+	    tskip7.InputPlaceName.add("allred_2");
+	    tskip7.InputPlaceName.add("SENSOR7C");
+	    
+	    Condition T7CttransIndex_skip = new Condition(tskip7, "allred_2", TransitionCondition.NotNull);
+	    Condition T7CttransIndex2_skip = new Condition(tskip7, "SENSOR7C", TransitionCondition.IsNull);
+	    T7CttransIndex_skip.SetNextCondition(LogicConnector.AND, T7CttransIndex2_skip);
+	
+	    GuardMapping grdT7_skip = new GuardMapping();
+	    grdT7_skip.condition= T1CttransIndex_skip;
+	    grdT7_skip.Activations.add(new Activation(tskip7, "allred_2", TransitionOperation.Move, "r1r2r3"));
+	            
+	    tskip7.GuardMappingList.add(grdT7_skip);
+	
+	    tskip7.Delay = 0;
+	    pn.Transitions.add(tskip7);
             
         // Transition T8  
         PetriTransition t8 = new PetriTransition(pn);
