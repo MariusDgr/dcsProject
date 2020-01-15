@@ -136,7 +136,7 @@ public class Controller4F {
 		
 		iniT.GuardMappingList.add(grdiniT);
 	
-		iniT.Delay = 5;
+		iniT.Delay = 3;
 		pn.Transitions.add(iniT);
 		
 		
@@ -157,7 +157,7 @@ public class Controller4F {
                 
         t1.GuardMappingList.add(grdT1);
     
-        t1.Delay = 5;
+        t1.Delay = 1;
         pn.Transitions.add(t1);
         
             
@@ -197,7 +197,7 @@ public class Controller4F {
                 
         t3.GuardMappingList.add(grdT3);
     
-        t3.Delay = 5;
+        t3.Delay = 2;
         pn.Transitions.add(t3);
         
             
@@ -217,7 +217,7 @@ public class Controller4F {
                 
         t4.GuardMappingList.add(grdT4);
     
-        t4.Delay = 5;
+        t4.Delay = 1;
         pn.Transitions.add(t4);
         
             
@@ -257,7 +257,7 @@ public class Controller4F {
                 
         t6.GuardMappingList.add(grdT6);
     
-        t6.Delay = 5;
+        t6.Delay = 2;
         pn.Transitions.add(t6);
         
             
@@ -277,7 +277,7 @@ public class Controller4F {
                 
         t7.GuardMappingList.add(grdT7);
     
-        t7.Delay = 5;
+        t7.Delay = 1;
         pn.Transitions.add(t7);
         
             
@@ -317,7 +317,7 @@ public class Controller4F {
                 
         t9.GuardMappingList.add(grdT9);
     
-        t9.Delay = 5;
+        t9.Delay = 2;
         pn.Transitions.add(t9);
         
             
@@ -357,7 +357,7 @@ public class Controller4F {
                 
         t11.GuardMappingList.add(grdT11);
     
-        t11.Delay = 5;
+        t11.Delay = 2;
         pn.Transitions.add(t11);
         
             
@@ -377,7 +377,7 @@ public class Controller4F {
                 
         t12.GuardMappingList.add(grdT12);
     
-        t12.Delay = 5;
+        t12.Delay = 1;
         pn.Transitions.add(t12);
         
         
@@ -386,7 +386,7 @@ public class Controller4F {
 		// ----------------------------PN Start-------------------------------------------------
 		// -------------------------------------------------------------------------------------
 
-		System.out.println("Exp1 started \n ------------------------------");
+		System.out.println("Controller Right started \n ------------------------------");
 		pn.Delay = 2000;
 		// pn.Start();
 

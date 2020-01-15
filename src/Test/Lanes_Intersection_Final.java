@@ -93,8 +93,8 @@ public class Lanes_Intersection_Final {
 		// -------------------------------------------------------------------------------------
 
 		//DataCar p13 = new DataCar(); out of action
-		//p13.SetName("P_a4"); no needed
-		//pn.PlaceList.add(p13); yolo
+		//p13.SetName("P_a4"); 
+		//pn.PlaceList.add(p13); 
 
 		DataCarQueue p14 = new DataCarQueue();
 		p14.Value.Size = 3;
@@ -504,7 +504,7 @@ public class Lanes_Intersection_Final {
 
 		// T13 ------------------------------------------------
 		PetriTransition t13 = new PetriTransition(pn);
-		t13.TransitionName = "T_i1";
+		t13.TransitionName = "P_IR";
 		t13.InputPlaceName.add("P_b1");
 
 		Condition T13Ct1 = new Condition(t13, "P_b1", TransitionCondition.NotNull);
