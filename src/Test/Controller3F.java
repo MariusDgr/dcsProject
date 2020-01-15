@@ -76,26 +76,25 @@ public class Controller3F {
 		pn.PlaceList.add(p7);
 		
 		
-		
-		DataTransfer p6 = new DataTransfer();
-		p6.SetName("OP1");
-		p6.Value = new TransferOperation("localhost", "1080" , "P_TL1");
-		pn.PlaceList.add(p6);
-		
-		DataTransfer p7 = new DataTransfer();
-		p7.SetName("OP2");
-		p7.Value = new TransferOperation("localhost", "1080" , "P_TL2");
-		pn.PlaceList.add(p7);
-		
 		DataTransfer p8 = new DataTransfer();
-		p8.SetName("OP3");
-		p8.Value = new TransferOperation("localhost", "1080" , "P_TL3");
+		p8.SetName("OP1");
+		p8.Value = new TransferOperation("localhost", "1080" , "P_TL1");
 		pn.PlaceList.add(p8);
 		
 		DataTransfer p9 = new DataTransfer();
-		p9.SetName("OP4");
-		p9.Value = new TransferOperation("localhost", "1080" , "P_TL4");
+		p9.SetName("OP2");
+		p9.Value = new TransferOperation("localhost", "1080" , "P_TL2");
+		pn.PlaceList.add(p7);
+		
+		DataTransfer p9 = new DataTransfer();
+		p9.SetName("OP3");
+		p9.Value = new TransferOperation("localhost", "1080" , "P_TL3");
 		pn.PlaceList.add(p9);
+		
+		DataTransfer p10 = new DataTransfer();
+		p10.SetName("OP4");
+		p10.Value = new TransferOperation("localhost", "1080" , "P_TL4");
+		pn.PlaceList.add(p10);
 		
 		
 		//----------------------------iniT------------------------------------
