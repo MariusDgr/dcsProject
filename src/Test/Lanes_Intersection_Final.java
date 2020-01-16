@@ -313,16 +313,16 @@ public class Lanes_Intersection_Final {
 		ps3.Value = new TransferOperation("localhost", "1081", "SENSOR3C");
 		pn.PlaceList.add(ps3);
         
-        DataTransfer ps4 = new DataTransfer();
-		ps4.SetName("SENSOR4");
-		ps4.Value = new TransferOperation("localhost", "1081", "SENSOR4C");
-		pn.PlaceList.add(ps4);
+//        DataTransfer ps4 = new DataTransfer();
+//		ps4.SetName("SENSOR4");
+//		ps4.Value = new TransferOperation("localhost", "1081", "SENSOR4C");
+//		pn.PlaceList.add(ps4);
         
-        DataTransfer ps5 = new DataTransfer();
-		ps5.SetName("SENSOR5");
-		ps5.Value = new TransferOperation("localhost", "1082", "SENSOR5C");
-		pn.PlaceList.add(ps5);
-             
+//        DataTransfer ps5 = new DataTransfer();
+//		ps5.SetName("SENSOR5");
+//		ps5.Value = new TransferOperation("localhost", "1082", "SENSOR5C");
+//		pn.PlaceList.add(ps5);
+//             
         DataTransfer ps6 = new DataTransfer();
 		ps6.SetName("SENSOR6");
 		ps6.Value = new TransferOperation("localhost", "1082", "SENSOR6C");
@@ -597,7 +597,7 @@ public class Lanes_Intersection_Final {
 
 		// T13 ------------------------------------------------
 		PetriTransition t13 = new PetriTransition(pn);
-		t13.TransitionName = "P_IR";
+		t13.TransitionName = "T_i1";
 		t13.InputPlaceName.add("P_b1");
 
 		Condition T13Ct1 = new Condition(t13, "P_b1", TransitionCondition.NotNull);

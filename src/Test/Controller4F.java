@@ -132,9 +132,9 @@ public class Controller4F {
 		psc3.SetName("SENSOR3C");
 		pn.PlaceList.add(psc3);
 		
-		DataString psc4 = new DataString();
-		psc4.SetName("SENSOR4C");
-		pn.PlaceList.add(psc4);
+//		DataString psc4 = new DataString();
+//		psc4.SetName("SENSOR4C");
+//		pn.PlaceList.add(psc4);
 		
 //		DataTransfer psc5 = new DataTransfer();
 //		psc5.SetName("SENSOR5C");

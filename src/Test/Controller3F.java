@@ -101,9 +101,9 @@ public class Controller3F {
 		
 		
 		// --------------------- Adding sensors
-		DataString psc5 = new DataString();
-		psc5.SetName("SENSOR5C");
-		pn.PlaceList.add(psc5);
+//		DataString psc5 = new DataString();
+//		psc5.SetName("SENSOR5C");
+//		pn.PlaceList.add(psc5);
 		
 		DataString psc6 = new DataString();
 		psc6.SetName("SENSOR6C");
