@@ -201,11 +201,11 @@ public class Controller3F {
         t4.TransitionName = "T4";
         t4.InputPlaceName.add("allred_1");
         t4.InputPlaceName.add("green");
-        t4.InputPlaceName.add("SENSOR6C");
+//        t4.InputPlaceName.add("SENSOR6C");
         
         Condition T4CttransIndex = new Condition(t4, "allred_1", TransitionCondition.NotNull);
-        Condition T4CttransIndex2 = new Condition(t1, "SENSOR6C", TransitionCondition.NotNull);
-        T4CttransIndex.SetNextCondition(LogicConnector.AND, T4CttransIndex2);
+//        Condition T4CttransIndex2 = new Condition(t1, "SENSOR6C", TransitionCondition.NotNull);
+//        T4CttransIndex.SetNextCondition(LogicConnector.AND, T4CttransIndex2);
 
         GuardMapping grdT4 = new GuardMapping();
         grdT4.condition= T4CttransIndex;
@@ -218,24 +218,24 @@ public class Controller3F {
         t4.Delay = 5;
         pn.Transitions.add(t4);
         
-        // Transition Tskip lane 6
-	    PetriTransition tskip6 = new PetriTransition(pn);
-	    tskip6.TransitionName = "Tskip6";
-	    tskip6.InputPlaceName.add("allred_1");
-	    tskip6.InputPlaceName.add("SENSOR6C");
-	    
-	    Condition T1CttransIndex_skip = new Condition(tskip6, "allred_1", TransitionCondition.NotNull);
-	    Condition T1CttransIndex2_skip = new Condition(tskip6, "SENSOR6C", TransitionCondition.IsNull);
-	    T1CttransIndex_skip.SetNextCondition(LogicConnector.AND, T1CttransIndex2_skip);
-	
-	    GuardMapping grdT6_skip = new GuardMapping();
-	    grdT6_skip.condition= T1CttransIndex_skip;
-	    grdT6_skip.Activations.add(new Activation(tskip6, "allred_1", TransitionOperation.Move, "allred_2"));
-	            
-	    tskip6.GuardMappingList.add(grdT6_skip);
-	
-	    tskip6.Delay = 1;
-	    pn.Transitions.add(tskip6);
+//        // Transition Tskip lane 6
+//	    PetriTransition tskip6 = new PetriTransition(pn);
+//	    tskip6.TransitionName = "Tskip6";
+//	    tskip6.InputPlaceName.add("allred_1");
+//	    tskip6.InputPlaceName.add("SENSOR6C");
+//	    
+//	    Condition T1CttransIndex_skip = new Condition(tskip6, "allred_1", TransitionCondition.NotNull);
+//	    Condition T1CttransIndex2_skip = new Condition(tskip6, "SENSOR6C", TransitionCondition.IsNull);
+//	    T1CttransIndex_skip.SetNextCondition(LogicConnector.AND, T1CttransIndex2_skip);
+//	
+//	    GuardMapping grdT6_skip = new GuardMapping();
+//	    grdT6_skip.condition= T1CttransIndex_skip;
+//	    grdT6_skip.Activations.add(new Activation(tskip6, "allred_1", TransitionOperation.Move, "allred_2"));
+//	            
+//	    tskip6.GuardMappingList.add(grdT6_skip);
+//	
+//	    tskip6.Delay = 1;
+//	    pn.Transitions.add(tskip6);
             
         // Transition T5  
         PetriTransition t5 = new PetriTransition(pn);
@@ -282,11 +282,11 @@ public class Controller3F {
         t7.TransitionName = "T7";
         t7.InputPlaceName.add("allred_2");
         t7.InputPlaceName.add("green");
-	    t7.InputPlaceName.add("SENSOR7C");
+//	    t7.InputPlaceName.add("SENSOR7C");
         
         Condition T7CttransIndex = new Condition(t7, "allred_2", TransitionCondition.NotNull);
-        Condition T7CttransIndex2 = new Condition(t7, "SENSOR7C", TransitionCondition.NotNull);
-        T7CttransIndex.SetNextCondition(LogicConnector.AND, T7CttransIndex2);
+//        Condition T7CttransIndex2 = new Condition(t7, "SENSOR7C", TransitionCondition.NotNull);
+//        T7CttransIndex.SetNextCondition(LogicConnector.AND, T7CttransIndex2);
 
         GuardMapping grdT7 = new GuardMapping();
         grdT7.condition= T7CttransIndex;
@@ -303,14 +303,14 @@ public class Controller3F {
 	    PetriTransition tskip7 = new PetriTransition(pn);
 	    tskip7.TransitionName = "Tskip7";
 	    tskip7.InputPlaceName.add("allred_2");
-	    tskip7.InputPlaceName.add("SENSOR7C");
+//	    tskip7.InputPlaceName.add("SENSOR7C");
 	    
 	    Condition T7CttransIndex_skip = new Condition(tskip7, "allred_2", TransitionCondition.NotNull);
-	    Condition T7CttransIndex2_skip = new Condition(tskip7, "SENSOR7C", TransitionCondition.IsNull);
-	    T7CttransIndex_skip.SetNextCondition(LogicConnector.AND, T7CttransIndex2_skip);
+//	    Condition T7CttransIndex2_skip = new Condition(tskip7, "SENSOR7C", TransitionCondition.IsNull);
+//	    T7CttransIndex_skip.SetNextCondition(LogicConnector.AND, T7CttransIndex2_skip);
 	
 	    GuardMapping grdT7_skip = new GuardMapping();
-	    grdT7_skip.condition= T1CttransIndex_skip;
+	    grdT7_skip.condition= T7CttransIndex_skip;
 	    grdT7_skip.Activations.add(new Activation(tskip7, "allred_2", TransitionOperation.Move, "r1r2r3"));
 	            
 	    tskip7.GuardMappingList.add(grdT7_skip);
