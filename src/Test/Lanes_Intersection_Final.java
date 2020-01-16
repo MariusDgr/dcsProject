@@ -298,21 +298,21 @@ public class Lanes_Intersection_Final {
 		
 		// ------------------------ Sensors for intelligent cycles
 
-//        DataTransfer ps1 = new DataTransfer();
-//		ps1.SetName("SENSOR1");
-//		ps1.Value = new TransferOperation("localhost", "1081", "SENSOR1C");
-//		pn.PlaceList.add(ps1);
-//        
-//        DataTransfer ps2 = new DataTransfer();
-//		ps2.SetName("SENSOR2");
-//		ps2.Value = new TransferOperation("localhost", "1081", "SENSOR2C");
-//		pn.PlaceList.add(ps2);
-//        
-//        DataTransfer ps3 = new DataTransfer();
-//		ps3.SetName("SENSOR3");
-//		ps3.Value = new TransferOperation("localhost", "1081", "SENSOR3C");
-//		pn.PlaceList.add(ps3);
-//        
+        DataTransfer ps1 = new DataTransfer();
+		ps1.SetName("SENSOR1");
+		ps1.Value = new TransferOperation("localhost", "1081", "SENSOR1C");
+		pn.PlaceList.add(ps1);
+        
+        DataTransfer ps2 = new DataTransfer();
+		ps2.SetName("SENSOR2");
+		ps2.Value = new TransferOperation("localhost", "1081", "SENSOR2C");
+		pn.PlaceList.add(ps2);
+        
+        DataTransfer ps3 = new DataTransfer();
+		ps3.SetName("SENSOR3");
+		ps3.Value = new TransferOperation("localhost", "1081", "SENSOR3C");
+		pn.PlaceList.add(ps3);
+        
 ////        DataTransfer ps4 = new DataTransfer();
 ////		ps4.SetName("SENSOR4");
 ////		ps4.Value = new TransferOperation("localhost", "1081", "SENSOR4C");
@@ -322,33 +322,33 @@ public class Lanes_Intersection_Final {
 ////		ps5.SetName("SENSOR5");
 ////		ps5.Value = new TransferOperation("localhost", "1082", "SENSOR5C");
 ////		pn.PlaceList.add(ps5);
-////             
-//        DataTransfer ps6 = new DataTransfer();
-//		ps6.SetName("SENSOR6");
-//		ps6.Value = new TransferOperation("localhost", "1082", "SENSOR6C");
-//		pn.PlaceList.add(ps6);
-//          
-//        DataTransfer ps7 = new DataTransfer();
-//		ps7.SetName("SENSOR7");
-//		ps7.Value = new TransferOperation("localhost", "1082", "SENSOR7C");
-//		pn.PlaceList.add(ps7);
+//             
+        DataTransfer ps6 = new DataTransfer();
+		ps6.SetName("SENSOR6");
+		ps6.Value = new TransferOperation("localhost", "1082", "SENSOR6C");
+		pn.PlaceList.add(ps6);
+          
+        DataTransfer ps7 = new DataTransfer();
+		ps7.SetName("SENSOR7");
+		ps7.Value = new TransferOperation("localhost", "1082", "SENSOR7C");
+		pn.PlaceList.add(ps7);
         
 		// -------------------------------- Sensor place
 
-//        DataString car1 = new DataString();
-//		car1.SetName("car1");
-//		car1.SetValue("car1");
-//		pn.PlaceList.add(car1);
-//          
-//        DataString car2 = new DataString();
-//		car2.SetName("car2");
-//		car2.SetValue("car2");
-//		pn.PlaceList.add(car2);
-//        
-//        DataString car3 = new DataString();
-//		car3.SetName("car3");
-//		car3.SetValue("car3");
-//		pn.PlaceList.add(car3);
+        DataString car1 = new DataString();
+		car1.SetName("car1");
+		car1.SetValue("car1");
+		pn.PlaceList.add(car1);
+          
+        DataString car2 = new DataString();
+		car2.SetName("car2");
+		car2.SetValue("car2");
+		pn.PlaceList.add(car2);
+        
+        DataString car3 = new DataString();
+		car3.SetName("car3");
+		car3.SetValue("car3");
+		pn.PlaceList.add(car3);
 //        
 //        DataString car4 = new DataString();
 //		car4.SetName("car4");
@@ -360,15 +360,15 @@ public class Lanes_Intersection_Final {
 //		car5.SetValue("car5");
 //		pn.PlaceList.add(car5);
 //         
-//        DataString car6 = new DataString();
-//		car6.SetName("car6");
-//		car6.SetValue("car6");
-//		pn.PlaceList.add(car6);
-//           
-//        DataString car7 = new DataString();
-//		car7.SetName("car7");
-//		car7.SetValue("car7");
-//		pn.PlaceList.add(car7);
+        DataString car6 = new DataString();
+		car6.SetName("car6");
+		car6.SetValue("car6");
+		pn.PlaceList.add(car6);
+           
+        DataString car7 = new DataString();
+		car7.SetName("car7");
+		car7.SetValue("car7");
+		pn.PlaceList.add(car7);
         
         	
 		// -------------------------------------------------------------------------------------------
@@ -379,7 +379,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t1 = new PetriTransition(pn);
 		t1.TransitionName = "T_u1";
 		t1.InputPlaceName.add("P_a1");
-//		t1.InputPlaceName.add("car1");
+		t1.InputPlaceName.add("car1");
 
 		Condition T1Ct1 = new Condition(t1, "P_a1", TransitionCondition.NotNull);
 		Condition T1Ct2 = new Condition(t1, "P_x1", TransitionCondition.CanAddCars);
@@ -387,8 +387,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT1 = new GuardMapping();
 		grdT1.condition = T1Ct1;
-//		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.SendOverNetwork, "SENSOR1"));
-//		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.Move, "car1"));
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.SendOverNetwork, "SENSOR1"));
+		grdT1.Activations.add(new Activation(t1, "car1", TransitionOperation.Move, "car1"));
 		grdT1.Activations.add(new Activation(t1, "P_a1", TransitionOperation.AddElement, "P_x1"));
 		t1.GuardMappingList.add(grdT1);
 
@@ -419,7 +419,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t3 = new PetriTransition(pn);
 		t3.TransitionName = "T_u2";
 		t3.InputPlaceName.add("P_a2");
-//		t3.InputPlaceName.add("car2");
+		t3.InputPlaceName.add("car2");
 
 		Condition T3Ct1 = new Condition(t3, "P_a2", TransitionCondition.NotNull);
 		Condition T3Ct2 = new Condition(t3, "P_x2", TransitionCondition.CanAddCars);
@@ -427,8 +427,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT3 = new GuardMapping();
 		grdT3.condition = T3Ct1;
-//		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.SendOverNetwork, "SENSOR2"));
-//		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.Move, "car2"));
+		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.SendOverNetwork, "SENSOR2"));
+		grdT3.Activations.add(new Activation(t3, "car2", TransitionOperation.Move, "car2"));
 		grdT3.Activations.add(new Activation(t3, "P_a2", TransitionOperation.AddElement, "P_x2"));
 		t3.GuardMappingList.add(grdT3);
 
@@ -449,7 +449,7 @@ public class Lanes_Intersection_Final {
 		grdT4.condition = T4Ct1;
 		grdT4.Activations.add(new Activation(t4, "P_x2", TransitionOperation.PopElementWithoutTarget, "P_b2"));
 		grdT4.Activations.add(new Activation(t4, "P_TL2", TransitionOperation.Move, "P_TL2"));
-		t4.GuardMappingList.add(grdT2);
+		t4.GuardMappingList.add(grdT4);
 
 		t4.Delay = 0;
 		pn.Transitions.add(t4);
@@ -458,7 +458,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t5 = new PetriTransition(pn);
 		t5.TransitionName = "T_u3";
 		t5.InputPlaceName.add("P_a3");
-//		t5.InputPlaceName.add("car3");
+		t5.InputPlaceName.add("car3");
 
 		Condition T5Ct1 = new Condition(t5, "P_a3", TransitionCondition.NotNull);
 		Condition T5Ct2 = new Condition(t5, "P_x3", TransitionCondition.CanAddCars);
@@ -466,8 +466,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT5 = new GuardMapping();
 		grdT5.condition = T5Ct1;
-//		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.SendOverNetwork, "SENSOR3"));
-//		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.Move, "car3"));
+		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.SendOverNetwork, "SENSOR3"));
+		grdT5.Activations.add(new Activation(t5, "car3", TransitionOperation.Move, "car3"));
 		grdT5.Activations.add(new Activation(t5, "P_a3", TransitionOperation.AddElement, "P_x3"));
 		t5.GuardMappingList.add(grdT5);
 
@@ -786,31 +786,31 @@ public class Lanes_Intersection_Final {
 //		pn.Transitions.add(t1);
 
 		// T24 ------------------------------------------------
-		PetriTransition t24 = new PetriTransition(pn);
-		t24.TransitionName = "T_e5";
-		t24.InputPlaceName.add("P_x5");
-		t24.InputPlaceName.add("P_TL5");
-
-		Condition T24Ct1 = new Condition(t24, "P_TL5", TransitionCondition.Equal, "green");
-		Condition T24Ct2 = new Condition(t24, "P_x5", TransitionCondition.HaveCar);
-		T24Ct1.SetNextCondition(LogicConnector.AND, T24Ct2);
-
-		GuardMapping grdT24 = new GuardMapping();
-		grdT24.condition = T24Ct1;
-		grdT24.Activations.add(new Activation(t24, "P_x5", TransitionOperation.PopElementWithoutTarget, "P_b5"));
-	    grdT24.Activations.add(new Activation(t24, "P_TL5", TransitionOperation.Move, "P_TL5"));
-	    
-		t24.GuardMappingList.add(grdT24);
-
-//				t24.Delay = 3; TODO
-		pn.Transitions.add(t24);
-		
+//		PetriTransition t24 = new PetriTransition(pn);
+//		t24.TransitionName = "T_e5";
+//		t24.InputPlaceName.add("P_x5");
+//		t24.InputPlaceName.add("P_TL5");
+//
+//		Condition T24Ct1 = new Condition(t24, "P_TL5", TransitionCondition.Equal, "green");
+//		Condition T24Ct2 = new Condition(t24, "P_x5", TransitionCondition.HaveCar);
+//		T24Ct1.SetNextCondition(LogicConnector.AND, T24Ct2);
+//
+//		GuardMapping grdT24 = new GuardMapping();
+//		grdT24.condition = T24Ct1;
+//		grdT24.Activations.add(new Activation(t24, "P_x5", TransitionOperation.PopElementWithoutTarget, "P_b5"));
+//	    grdT24.Activations.add(new Activation(t24, "P_TL5", TransitionOperation.Move, "P_TL5"));
+//	    
+//		t24.GuardMappingList.add(grdT24);
+//
+////				t24.Delay = 3; TODO
+//		pn.Transitions.add(t24);
+//		
 		
 		// T25 ------------------------------------------------
 		PetriTransition t25 = new PetriTransition(pn);
 		t25.TransitionName = "T_u6";
 		t25.InputPlaceName.add("P_a6");
-//		t25.InputPlaceName.add("car6");
+		t25.InputPlaceName.add("car6");
 
 		Condition T25Ct1 = new Condition(t25, "P_a6", TransitionCondition.NotNull);
 		Condition T25Ct2 = new Condition(t25, "P_x6", TransitionCondition.CanAddCars);
@@ -818,8 +818,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT25 = new GuardMapping();
 		grdT25.condition = T25Ct1;
-//		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.SendOverNetwork, "SENSOR6"));
-//		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.Move, "car6"));
+		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.SendOverNetwork, "SENSOR6"));
+		grdT25.Activations.add(new Activation(t25, "car6", TransitionOperation.Move, "car6"));
 		grdT25.Activations.add(new Activation(t25, "P_a6", TransitionOperation.AddElement, "P_x6"));
 		t25.GuardMappingList.add(grdT25);
 
@@ -850,7 +850,7 @@ public class Lanes_Intersection_Final {
 		PetriTransition t27 = new PetriTransition(pn);
 		t27.TransitionName = "T_u7";
 		t27.InputPlaceName.add("P_a7");
-//		t27.InputPlaceName.add("car7");
+		t27.InputPlaceName.add("car7");
 
 		Condition T27Ct1 = new Condition(t27, "P_a7", TransitionCondition.NotNull);
 		Condition T27Ct2 = new Condition(t27, "P_x7", TransitionCondition.CanAddCars);
@@ -858,8 +858,8 @@ public class Lanes_Intersection_Final {
 
 		GuardMapping grdT27 = new GuardMapping();
 		grdT27.condition = T27Ct1;
-//		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.SendOverNetwork, "SENSOR7"));
-//		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.Move, "car7"));
+		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.SendOverNetwork, "SENSOR7"));
+		grdT27.Activations.add(new Activation(t27, "car7", TransitionOperation.Move, "car7"));
 		grdT27.Activations.add(new Activation(t27, "P_a7", TransitionOperation.AddElement, "P_x7"));
 		t27.GuardMappingList.add(grdT27);
 
